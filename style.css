@@ -92,6 +92,10 @@ button {
   background-color: rgb(138, 48, 16);
 }
 
+.stopwatch_button {
+  width: 100%;
+}
+
 .clear_button,
 .clear_entry_button,
 .stopwatch_reset_button,
@@ -148,6 +152,7 @@ button {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) inset;
 }
 
+.stopwatch_hours,
 .stopwatch_minutes,
 .stopwatch_milliseconds,
 .stopwatch_seconds {
