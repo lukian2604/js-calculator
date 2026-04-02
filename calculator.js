@@ -5,7 +5,7 @@ let firstNumber = ''
 let secondNumber = ''
 let isSecondNumber = false
 
-const display = document.querySelector('.display .text')
+const display = document.querySelector('.calculator_display .calculator_text')
 clearButton.addEventListener('click', () => {
   firstNumber = ''
   secondNumber = ''

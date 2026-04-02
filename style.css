@@ -8,22 +8,34 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  column-gap: 100px;
   height: 98vh;
   background: linear-gradient(145deg, #1a1f1a, #2d4d2d);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-.title {
+.calculator_title,
+.timer_title,
+.stopwatch_title {
   font-size: 50px;
   color: transparent;
-  -webkit-background-clip: text; /* Chrome, Safari */
-  -webkit-text-fill-color: transparent; /* Chrome, Safari */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   background: linear-gradient(145deg, #000000, #2d4d2d, #5aa55a);
   background-clip: text;
 }
 
-.calculator {
+.calculator,
+.stopwatch,
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calculator_case,
+.stopwatch_case,
+.timer_case {
   padding: 20px;
   border-radius: 20px;
   margin-top: 20px;
@@ -31,7 +43,7 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-.display {
+.calculator_display {
   display: flex;
   align-items: end;
   justify-content: end;
@@ -44,7 +56,8 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.keyboard {
+.keyboard,
+.stopwatch_buttons {
   display: flex;
   column-gap: 10px;
 }
@@ -68,31 +81,123 @@ button {
   border: none;
   font-size: 16px;
   font-weight: 700;
-  transition-duration: 0.2s;
+  transition-duration: 0.3s;
+}
+
+.set_timer_button {
+  background-color: coral;
+}
+
+.set_timer_button:hover {
+  background-color: rgb(138, 48, 16);
 }
 
 .clear_button,
-.clear_entry_button {
+.clear_entry_button,
+.stopwatch_reset_button,
+.timer_reset_button {
   background-color: red;
 }
 
 .clear_entry_button:hover,
-.clear_button:hover {
+.clear_button:hover,
+.stopwatch_reset_button:hover,
+.timer_reset_button:hover {
   background-color: brown;
 }
 
-.symbol_button {
+.symbol_button,
+.stopwatch_pause_button,
+.timer_pause_button {
   background-color: rgb(255, 140, 0);
 }
 
-.symbol_button:hover {
+.symbol_button:hover,
+.stopwatch_pause_button:hover,
+.timer_pause_button:hover {
   background-color: rgb(174, 97, 2);
 }
 
-.equals_button {
+.equals_button,
+.stopwatch_start_button,
+.timer_start_button {
   background-color: seagreen;
 }
 
-.equals_button:hover {
-  background-color: rgb(13, 127, 60);
+.equals_button:hover,
+.stopwatch_start_button:hover,
+.timer_start_button:hover {
+  background-color: rgb(8, 96, 45);
+}
+
+.stopwatch_display,
+.timer_display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 100px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  column-gap: 10px;
+  font-size: 50px;
+}
+
+.timer_display {
+  column-gap: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) inset;
+}
+
+.stopwatch_minutes,
+.stopwatch_milliseconds,
+.stopwatch_seconds {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 7px;
+  border-radius: 20px;
+}
+
+input {
+  width: 70px;
+  height: 70px;
+  padding: 10px;
+  padding-left: 21px;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  font-size: 25px;
+  outline: none;
+}
+
+input::placeholder {
+  font-size: 20px;
+}
+
+input:focus {
+  border: 1px solid;
+  border-color: seagreen;
+}
+
+.timer_buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.set_timer_button {
+  width: auto;
+  grid-column: 1 / span 3;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
 }
